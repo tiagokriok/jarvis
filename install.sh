@@ -10,7 +10,13 @@ apt-get update
 apt-get upgrade -y
 
 echo "  Essencial softwares..."
-apt install -y --force-yes build-essential curl git zip unzip zsh vim tilix vlc
+apt install -y --force-yes build-essential curl git rar zip unzip zsh vim tilix vlc
+
+echo "Installing snap..."
+apt install -y --force-yes snapd
+
+echo "Installing Vscode..."
+snap install -y --force-yes --classic code
 
 echo "Installing oh-my-zsh"
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -65,6 +71,15 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 gdebi google-chrome-stable_current_amd64.deb
 
 echo "Installing spotify..."
-curl -sS https://download.spotify.com/debian/pubkey.gpg | sudo apt-key add -
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-apt-get update && sudo apt-get install -y --force-yes spotify-client
+curl -sS https://download.spotify.com/debian/pubkey.gpg | apt-key add -
+echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list
+apt-get update && apt-get install -y --force-yes spotify-client
+
+echo "Installing GIMP..."
+add-apt-repository ppa:otto-kesselgulasch/gimp
+apt-get update
+apt-get install -y --force-yes gimp gimp-gmic gmic
+apt-get install -y --force-yes gimp-plugin-registry
+
+echo "Installing Obstudio..."
+apt-get install -y --force-yes obs-studio

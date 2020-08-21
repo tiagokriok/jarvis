@@ -10,7 +10,7 @@ apt-get update
 apt-get upgrade -y
 
 echo "  Essencial softwares..."
-apt install -y --force-yes build-essential curl git rar zip unzip zsh vim tilix vlc ffmpeg
+apt install -y --force-yes build-essential curl git rar zip unzip zsh vim tilix vlc ffmpeg ffmpegthumbnailer
 
 echo "Installing snap..."
 apt install -y --force-yes snapd

@@ -10,7 +10,7 @@ apt-get update
 apt-get upgrade -y
 
 echo "  Essencial softwares..."
-apt install -y --force-yes build-essential curl git rar zip unzip zsh vim tilix vlc
+apt install -y --force-yes build-essential curl git rar zip unzip zsh vim tilix vlc ffmpeg
 
 echo "Installing snap..."
 apt install -y --force-yes snapd
@@ -23,6 +23,9 @@ sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools
 
 echo " Installing asdf..."
 cd ~/  && git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.8
+
+# fix global paths
+asdf reshim nodejs
 
 echo "  Ubuntu restrict extras..."
 apt install -y --force-yes ubuntu-restricted-extras

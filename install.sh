@@ -12,6 +12,9 @@ apt-get upgrade -y
 echo "  Essencial softwares..."
 apt install -y --force-yes build-essential curl git rar zip unzip zsh vim tilix vlc ffmpeg ffmpegthumbnailer
 
+echo "  Ubuntu restrict extras..."
+apt install -y --force-yes ubuntu-restricted-extras
+
 echo "Installing snap..."
 apt install -y --force-yes snapd
 
@@ -21,15 +24,18 @@ snap install -y --force-yes --classic code
 echo "Installing oh-my-zsh"
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+echo "  Asdf requeriments..."
+apt install -y --force-yes dirmngr gpg
+
 echo " Installing asdf..."
 cd ~/  && git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.7.8
 
+echo " Installing yarn by asdf..."
+asdf plugin-add yarn
+asdf install yarn latest
+
 # fix global paths
 asdf reshim nodejs
-
-echo "  Ubuntu restrict extras..."
-apt install -y --force-yes ubuntu-restricted-extras
-
 
 echo " Installing docker..."
 apt-get install -y --force-yes \
@@ -86,3 +92,7 @@ apt-get install -y --force-yes gimp-plugin-registry
 
 echo "Installing Obstudio..."
 apt-get install -y --force-yes obs-studio
+
+echo "Auto tune powertop..."
+sudo apt install powertop
+sudo powertop --auto-tune

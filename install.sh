@@ -21,6 +21,30 @@ apt install -y --force-yes snapd
 echo "Installing Vscode..."
 snap install -y --force-yes --classic code
 
+echo "Installing Mailspring..."
+snap install -y --force-yes --classic mailspring
+
+echo "Installing Slack..."
+snap install -y --force-yes --classic slack
+
+echo "Installing Insomnia..."
+snap install -y --force-yes --classic insomnia
+
+echo "Installing Todoist..."
+snap install -y --force-yes --classic todoist
+
+echo "Installing Authy..."
+snap install -y --force-yes --classic authy
+
+echo "Installing Gimp..."
+snap install -y --force-yes --classic gimp
+
+echo "Installing Discord..."
+snap install -y --force-yes discord --classic
+
+echo "Installing bitwarden..."
+snap install -y --force-yes bitwarden --classic
+
 echo "Installing oh-my-zsh"
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -84,15 +108,5 @@ curl -sS https://download.spotify.com/debian/pubkey.gpg | apt-key add -
 echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list
 apt-get update && apt-get install -y --force-yes spotify-client
 
-echo "Installing GIMP..."
-add-apt-repository ppa:otto-kesselgulasch/gimp
-apt-get update
-apt-get install -y --force-yes gimp gimp-gmic gmic
-apt-get install -y --force-yes gimp-plugin-registry
-
 echo "Installing Obstudio..."
 apt-get install -y --force-yes obs-studio
-
-echo "Auto tune powertop..."
-sudo apt install powertop
-sudo powertop --auto-tune

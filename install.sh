@@ -10,7 +10,7 @@ apt-get update
 apt-get upgrade -y
 
 echo "  Essencial softwares..."
-apt install -y --force-yes build-essential curl git rar zip unzip zsh vim tilix vlc ffmpeg ffmpegthumbnailer
+apt install -y --force-yes build-essential curl git rar zip unzip vim tilix vlc ffmpeg ffmpegthumbnailer
 
 echo "  Ubuntu restrict extras..."
 apt install -y --force-yes ubuntu-restricted-extras
@@ -47,6 +47,9 @@ snap install -y --force-yes bitwarden --classic
 
 echo "Installing oh-my-zsh"
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+echo "Installing oh-my-zsh >> zsh-autosuggestions"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 echo "  Asdf requeriments..."
 apt install -y --force-yes dirmngr gpg

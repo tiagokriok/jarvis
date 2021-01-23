@@ -48,8 +48,11 @@ snap install -y --force-yes bitwarden --classic
 echo "Installing oh-my-zsh"
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-echo "Installing oh-my-zsh >> zsh-autosuggestions"
+echo "Installing oh-my-zsh >> zsh-autosuggestions..."
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+echo "Install zsh-syntax-highlighting..."
+apt install -y --force-yes zsh-syntax-highlighting
 
 echo "  Asdf requeriments..."
 apt install -y --force-yes dirmngr gpg

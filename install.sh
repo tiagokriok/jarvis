@@ -10,7 +10,7 @@ apt-get update
 apt-get upgrade -y
 
 echo "  Essencial softwares..."
-apt install -y --force-yes build-essential curl git rar zip unzip vim tilix vlc ffmpeg ffmpegthumbnailer
+apt install -y --force-yes build-essential curl git rar zip unzip vim tilix vlc ffmpeg ffmpegthumbnailer neofetch
 
 echo "  Ubuntu restrict extras..."
 apt install -y --force-yes ubuntu-restricted-extras
